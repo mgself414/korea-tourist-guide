@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>한국 방문 외국인 관광객 종합 가이드</title>
+<meta name="description" content="한국을 방문하는 외국인 관광객이 자주 겪는 이슈와 실용 정보를 카테고리별로 정리한 종합 가이드. 교통·숙소·음식·문화 등 파트별 탐색 제공.">
+<meta property="og:title" content="한국 방문 외국인 관광객 종합 가이드">
+<meta property="og:description" content="외국인 관광객을 위한 한국 여행 이슈 분류집. 교통, 문화, 음식, 숙박 등 주제별 정보를 한눈에.">
 <style>
 :root {
   --bg: #f5f3ee;
@@ -37,7 +40,7 @@ body {
   padding:22px 20px 16px; border-bottom:1px solid rgba(255,255,255,0.06);
 }
 .sidebar-logo h1 { font-size:16px; font-weight:700; color:var(--blue); letter-spacing:0.5px; }
-.sidebar-logo p { font-size:10px; color:rgba(255,255,255,0.3); margin-top:3px; }
+.sidebar-logo p { font-size:10px; color:rgba(255,255,255,0.7); margin-top:3px; }
 .sidebar-search { padding:10px 14px; }
 .sidebar-search input {
   width:100%; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);
@@ -53,7 +56,7 @@ body {
 }
 .nav-item {
   display:flex; align-items:center; gap:8px; padding:7px 20px;
-  color:rgba(255,255,255,0.5); text-decoration:none; font-size:12px;
+  color:rgba(255,255,255,0.7); text-decoration:none; font-size:12px;
   transition:all .15s; border-left:3px solid transparent;
 }
 .nav-item:hover { color:#fff; background:rgba(255,255,255,0.04); }
@@ -62,7 +65,7 @@ body {
 .nav-label { flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .nav-cnt {
   font-size:9px; background:rgba(255,255,255,0.08); padding:1px 6px;
-  border-radius:6px; color:rgba(255,255,255,0.4);
+  border-radius:6px; color:rgba(255,255,255,0.65);
 }
 .sidebar-bottom {
   padding:14px 20px; border-top:1px solid rgba(255,255,255,0.06);
@@ -70,7 +73,7 @@ body {
 .sidebar-stats { display:flex; gap:12px; margin-bottom:10px; }
 .sidebar-stats .st { text-align:center; flex:1; }
 .sidebar-stats .st-num { font-size:16px; font-weight:700; color:var(--blue); display:block; }
-.sidebar-stats .st-lbl { font-size:8px; color:rgba(255,255,255,0.3); letter-spacing:1px; text-transform:uppercase; }
+.sidebar-stats .st-lbl { font-size:10px; color:rgba(255,255,255,0.7); letter-spacing:1px; text-transform:uppercase; }
 .sidebar-btns { display:flex; gap:6px; }
 .sidebar-btns button {
   flex:1; padding:7px 0; border:1px solid rgba(255,255,255,0.12); background:transparent;
@@ -100,16 +103,16 @@ body {
 .hero h2 { font-size:18px; font-weight:300; position:relative; color:rgba(255,255,255,0.6); }
 .hero .hero-main { font-size:36px; font-weight:700; position:relative; margin:4px 0; }
 .hero .hero-main .accent { color:var(--blue); }
-.hero .hero-sub { font-size:14px; color:rgba(255,255,255,0.4); margin-top:4px; position:relative; }
+.hero .hero-sub { font-size:14px; color:rgba(255,255,255,0.65); margin-top:4px; position:relative; }
 .hero-stats {
   display:flex; gap:32px; margin-top:30px; position:relative;
 }
 .hero-stat .hn { font-size:28px; font-weight:700; color:var(--blue); }
-.hero-stat .hl { font-size:10px; color:rgba(255,255,255,0.35); letter-spacing:1px; text-transform:uppercase; }
+.hero-stat .hl { font-size:10px; color:rgba(255,255,255,0.65); letter-spacing:1px; text-transform:uppercase; }
 .hero-progress {
   margin-top:24px; position:relative;
 }
-.hero-progress .progress-label { font-size:11px; color:rgba(255,255,255,0.35); margin-bottom:6px; }
+.hero-progress .progress-label { font-size:11px; color:rgba(255,255,255,0.65); margin-bottom:6px; }
 .progress-bar { height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden; }
 .progress-fill { height:100%; background:linear-gradient(90deg,var(--blue),var(--green)); border-radius:3px; transition:width .5s; }
 
@@ -243,11 +246,36 @@ body {
 ::-webkit-scrollbar-track { background:transparent; }
 ::-webkit-scrollbar-thumb { background:#d8d2c8; border-radius:4px; }
 ::-webkit-scrollbar-thumb:hover { background:#b8b0a3; }
+
+/* ── A11Y (WCAG 2.2 patches, 2026-05-04) ── */
+.visually-hidden {
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+.sidebar-search input:focus-visible,
+.editor-area textarea:focus-visible,
+.sidebar-btns button:focus-visible,
+.btn-save:focus-visible,
+.btn-clear:focus-visible,
+.burger:focus-visible,
+.nav-item:focus-visible,
+.hero-lang a:focus-visible {
+  outline:2px solid var(--blue); outline-offset:2px;
+}
+.nav-item:focus-visible { outline-offset:-2px; background:rgba(255,255,255,0.07); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; }
+  *, *::before, *::after {
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+}
 </style>
 </head>
 <body>
 
-<button class="burger" onclick="document.querySelector('.sidebar').classList.toggle('open')">&#9776;</button>
+<button class="burger" aria-label="메뉴 열기" onclick="document.querySelector('.sidebar').classList.toggle('open')">&#9776;</button>
 
 <nav class="sidebar">
   <div class="sidebar-logo">
@@ -255,6 +283,7 @@ body {
     <p>한국 방문 외국인 관광객 종합 가이드</p>
   </div>
   <div class="sidebar-search">
+    <label for="searchInput" class="visually-hidden">항목 검색</label>
     <input type="text" id="searchInput" placeholder="항목 검색..." oninput="filterItems(this.value)">
   </div>
   <div class="sidebar-nav">
@@ -307,6 +336,7 @@ body {
     <div class="sidebar-btns">
       <button onclick="exportData()">내보내기</button>
       <button onclick="document.getElementById('importFile').click()">가져오기</button>
+      <label for="importFile" class="visually-hidden">JSON 파일 가져오기</label>
       <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
     </div>
   </div>
@@ -314,7 +344,7 @@ body {
 
 <div class="main">
   <div class="hero">
-    <div style="position:absolute;top:20px;right:30px;z-index:10"><a href="./en.html" style="display:inline-block;padding:5px 14px;border:1px solid rgba(255,255,255,.2);border-radius:8px;color:rgba(255,255,255,.5);font-size:11px;text-decoration:none">🇺🇸 English</a></div>
+    <div class="hero-lang" style="position:absolute;top:20px;right:30px;z-index:10"><a href="./en.html" style="display:inline-block;padding:5px 14px;border:1px solid rgba(255,255,255,.3);border-radius:8px;color:rgba(255,255,255,.75);font-size:11px;text-decoration:none">🇺🇸 English</a></div>
     <div class="hero-badge">2026 COMPREHENSIVE GUIDE</div>
     <h2>한국 방문 외국인 관광객</h2>
     <div class="hero-main">종합 <span class="accent">이슈 분류</span> 가이드</div>
